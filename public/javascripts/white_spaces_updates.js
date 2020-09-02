@@ -1,9 +1,9 @@
 /*
-  SpacedeckUpdates
+  WhiteSpacesUpdates
   This module contains functions dealing with Updates / Notifications.
 */
 
-SpacedeckUpdates = {
+WhiteSpacesUpdates = {
 
   user_notifications: [],
   updates_items: [],

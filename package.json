@@ -1,9 +1,9 @@
 {
-  "name": "spacedeck-open",
+  "name": "White-Spaces",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node spacedeck.js"
+    "start": "node white_spaces.js"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -55,9 +55,9 @@
   "directories": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/spacedeck/spacedeck-open.git"
+    "url": "https://github.com/MishkinBerteig/white-spaces.git"
   },
   "keywords": [],
-  "author": "Lukas F. Hartmann, Martin Güther",
+  "author": "Mishkin Berteig, Lukas F. Hartmann, Martin Güther",
   "license": "AGPLv3"
 }

@@ -1,9 +1,9 @@
 /*
-  SpacedeckRoutes
+  WhiteSpacesRoutes
   This module contains functions dealing with Routing and View Switching.
 */
 
-var SpacedeckRoutes = {
+var WhiteSpacesRoutes = {
 
   internal_route: function(path, on_success) {
     if(!this.router) {
@@ -83,7 +83,7 @@ var SpacedeckRoutes = {
             if (this.logged_in) {
               var invitation_token = get_query_param("code");
               accept_invitation(params.membership_id, invitation_token , function(m) {
-                window._spacedeck_location_change = true;
+                window._white_spaces_location_change = true;
                 location.href = "/spaces/"+m.space._id;
               }.bind(this), function(xhr) {
                 smoke.alert("Error ("+xhr.status+")", function() {
@@ -124,7 +124,7 @@ var SpacedeckRoutes = {
             if (this.logged_in) {
               if(this.invitation_token) {
                 accept_invitation(this.accept_invitation, function(m) {
-                  window._spacedeck_location_change = true;
+                  window._white_spaces_location_change = true;
                   location.href = "spaces/"+m.space_id;
                 }.bind(this), function(xhr) { console.error(xhr); });
               } else {
@@ -161,7 +161,7 @@ var SpacedeckRoutes = {
           path: "/spaces",
           handler: function(params) {
             if (!this.logged_in) {
-              window._spacedeck_location_change = true;
+              window._white_spaces_location_change = true;
               location.href = "/login";
             } else {
 
@@ -181,7 +181,7 @@ var SpacedeckRoutes = {
           path: "/account",
           handler: function(params) {
             if (!this.logged_in) {
-              window._spacedeck_location_change = true;
+              window._white_spaces_location_change = true;
               location.href = "/";
             } else {
               this.active_view = "account";
@@ -196,7 +196,7 @@ var SpacedeckRoutes = {
           path: "/team",
           handler: function(params) {
             if (!this.logged_in) {
-              window._spacedeck_location_change = true;
+              window._white_spaces_location_change = true;
               location.href = "/";
             } else {
               this.active_view = "team";
@@ -294,7 +294,7 @@ var SpacedeckRoutes = {
       this.internal_route(path, on_success);
       history.pushState(null, null, path);
     } else {
-      window._spacedeck_location_change = true;
+      window._white_spaces_location_change = true;
       location.href = path;
     }
   },

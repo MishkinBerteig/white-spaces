@@ -1,9 +1,9 @@
 /*
-  SpacedeckSpaces
+  WhiteSpacesSpaces
   This module contains functions dealing with Spaces UI.
 */
 
-var SpacedeckSpaces = {
+var WhiteSpacesSpaces = {
 
   data: {
     active_space: {advanced:{}},
@@ -81,7 +81,7 @@ var SpacedeckSpaces = {
       location.reload();
     },
     ask_guestname: function(dft, cb) {
-      smoke.prompt(__('what_is_your_name', "Spacedeck") , function(content) {
+      smoke.prompt(__('what_is_your_name', "White-Spaces") , function(content) {
         if (!content || (content.length === 0)) {
           this.ask_guestname(dft, cb);
         } else {
@@ -134,7 +134,7 @@ var SpacedeckSpaces = {
           is_home = (space_id == this.user.home_folder_id);
         }
 
-        document.title = "Loading… | Spacedeck";
+        document.title = "Loading… | White-Spaces";
 
         load_space(space_id, function(space, role) {
           document.title = space.name;
@@ -151,7 +151,7 @@ var SpacedeckSpaces = {
 
           if (space.space_type == "folder") {
             this.active_space = {advanced:{}};
-            document.title = "Spacedeck";
+            document.title = "White-Spaces";
 
             load_spaces(space_id, is_home, function(spaces) {
               space.children = spaces;
@@ -449,7 +449,7 @@ var SpacedeckSpaces = {
 
       if (!this.is_pro(this.user)) {
         // pro feature
-        smoke.confirm(__("spacedeck_pro_ad_versions"), function(confirmed) {
+        smoke.confirm(__("white_spaces_pro_ad_versions"), function(confirmed) {
           if (confirmed) this.show_upgrade_modal();
         }.bind(this));
         return;

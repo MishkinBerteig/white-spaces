@@ -50,7 +50,7 @@ function parse_link(data) {
     vimeoMatcher = /vimeo.com\/([^<]*)/;
     dailyMotionMatcher = /dailymotion.com\/video\/([^<]*)/;
     googleMapsMatcher = /google.com\/maps\?([^<]*)/;
-    spacedeckMatcher = new RegExp(location.host + "\/(spaces|folders)\/([0-9a-f]{24})");
+    white_spacesMatcher = new RegExp(location.host + "\/(spaces|folders)\/([0-9a-f]{24})");
 
     if (m = data.match(youtubeMatcher) || (m = data.match(youtubeMatcher2))) {
       videoId = m[1];

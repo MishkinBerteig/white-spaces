@@ -1,5 +1,5 @@
 
-var SpacedeckAvatars = {
+var WhiteSpacesAvatars = {
   data: {
     uploading_avatar: false,
     uploading_folder_avatar: false,

@@ -1,9 +1,9 @@
 /*
-  SpacedeckTeams
+  WhiteSpacesTeams
   This module contains functions dealing with Teams.
 */
 
-var SpacedeckTeams = {
+var WhiteSpacesTeams = {
 
   data: {
     team_members: [],

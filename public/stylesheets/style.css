@@ -1548,7 +1548,7 @@
 .icon-space-vertical:before {
   content: "\E1E0"; }
 
-.icon-spacedeck-logo:before {
+.icon-white_spaces-logo:before {
   content: "\E1E1"; }
 
 .icon-spacing-horizontal:before {
@@ -4900,7 +4900,7 @@ form .alert {
 .icon-space-vertical:before {
   content: "\E1E0"; }
 
-.icon-spacedeck-logo:before {
+.icon-white_spaces-logo:before {
   content: "\E1E1"; }
 
 .icon-spacing-horizontal:before {
@@ -7449,7 +7449,7 @@ select {
 .icon-space-vertical:before {
   content: "\E1E0"; }
 
-.icon-spacedeck-logo:before {
+.icon-white_spaces-logo:before {
   content: "\E1E1"; }
 
 .icon-spacing-horizontal:before {
@@ -11837,7 +11837,7 @@ button.close {
 .icon-space-vertical:before {
   content: "\E1E0"; }
 
-.icon-spacedeck-logo:before {
+.icon-white_spaces-logo:before {
   content: "\E1E1"; }
 
 .icon-spacing-horizontal:before {
@@ -14473,13 +14473,13 @@ button.close {
       border-radius: 60px !important;
       background-color: #ff5955; }
 
-.spacedeck-logo {
+.white_spaces-logo {
   font-size: 20px;
   line-height: 44px;
   color: #292929;
   padding-left: 0.5em;
   padding-right: 10px; }
-  .spacedeck-logo.white {
+  .white_spaces-logo.white {
     color: #f5f5f5; }
 
 .version-date {
@@ -15002,7 +15002,7 @@ button.close {
     height: 100%; }
   .artifact:not(.artifact-text) .text-column:not(.text-editing):empty {
     display: none !important; }
-  .artifact.x-spacedeck-shape .clip {
+  .artifact.x-white_spaces-shape .clip {
     height: 100%; }
   .artifact .shape {
     position: absolute; }

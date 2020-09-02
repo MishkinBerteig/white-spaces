@@ -6,7 +6,7 @@ var config = require('config');
 module.exports = (req, res, next) => {
   req.i18n.setLocale(req.i18n.prefLocale);
 
-  if (req.cookies.spacedeck_locale) {
+  if (req.cookies.white_spaces_locale) {
     req.i18n.setLocaleFromCookie();
   }
 

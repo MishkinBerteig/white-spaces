@@ -1,9 +1,9 @@
 /*
-  SpacedeckBoardArtifacts
+  WhiteSpacesBoardArtifacts
   This module contains functions dealing with absolute positioned Board Section Artifacts.
 */
 
-var SpacedeckBoardArtifacts = {
+var WhiteSpacesBoardArtifacts = {
   update_board_artifact_viewmodel: function(a) {
     var mt = this.artifact_major_type(a);
 
@@ -278,7 +278,7 @@ var SpacedeckBoardArtifacts = {
     } else if (provider=="soundcloud") {
       return '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url='+a.link_uri.replace(":", "%3A")+'"></iframe>';
 
-    } else if (provider=="spacedeck") {
+    } else if (provider=="white_spaces") {
 
       return ""; //<iframe frameborder=0 allowfullscreen src=\""+ a.meta.link_uri+"\"></iframe>
 
@@ -661,5 +661,5 @@ var SpacedeckBoardArtifacts = {
 }
 
 if (typeof(window) == 'undefined') {
-  exports.SpacedeckBoardArtifacts = SpacedeckBoardArtifacts;
+  exports.WhiteSpacesBoardArtifacts = WhiteSpacesBoardArtifacts;
 }

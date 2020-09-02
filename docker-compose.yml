@@ -1,9 +1,9 @@
 version: "2.0"
 
 services:
-  spacedeck:
+  white_spaces:
     build: .
-    container_name: spacedeck
+    container_name: white_spaces
     ports:
       - "9666:9666"
     volumes:

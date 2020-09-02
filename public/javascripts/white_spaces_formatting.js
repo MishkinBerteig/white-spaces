@@ -1,9 +1,9 @@
 /*
-  SpacedeckFormatting
+  WhiteSpacesFormatting
   This module contains functions dealing with Rich Text Formatting.
 */
 
-var SpacedeckFormatting = {
+var WhiteSpacesFormatting = {
   apply_formatting: function(section, cmd, arg1, arg2) {
     console.log("apply_formatting: ",section,cmd);
 

@@ -1,5 +1,5 @@
 
-function boot_spacedeck() {
+function boot_white_spaces() {
   console.log("booting...");
   // custom directives
 
@@ -57,28 +57,28 @@ function boot_spacedeck() {
     },
   };
 
-  // mix in functions from all Spacedeck modules
+  // mix in functions from all White-Spaces modules
 
-  methods = _.extend(methods, SpacedeckUsers.methods);
-  methods = _.extend(methods, SpacedeckWebsockets.methods);
-  methods = _.extend(methods, SpacedeckSpaces.methods);
-  methods = _.extend(methods, SpacedeckTeams.methods);
-  methods = _.extend(methods, SpacedeckBoardArtifacts);
-  methods = _.extend(methods, SpacedeckFormatting);
-  methods = _.extend(methods, SpacedeckSections.methods);
-  methods = _.extend(methods, SpacedeckAvatars.methods);
-  methods = _.extend(methods, SpacedeckModals.methods);
-  methods = _.extend(methods, SpacedeckAccount.methods);
-  methods = _.extend(methods, SpacedeckRoutes);
+  methods = _.extend(methods, WhiteSpacesUsers.methods);
+  methods = _.extend(methods, WhiteSpacesWebsockets.methods);
+  methods = _.extend(methods, WhiteSpacesSpaces.methods);
+  methods = _.extend(methods, WhiteSpacesTeams.methods);
+  methods = _.extend(methods, WhiteSpacesBoardArtifacts);
+  methods = _.extend(methods, WhiteSpacesFormatting);
+  methods = _.extend(methods, WhiteSpacesSections.methods);
+  methods = _.extend(methods, WhiteSpacesAvatars.methods);
+  methods = _.extend(methods, WhiteSpacesModals.methods);
+  methods = _.extend(methods, WhiteSpacesAccount.methods);
+  methods = _.extend(methods, WhiteSpacesRoutes);
 
-  data = _.extend(data, SpacedeckUsers.data);
-  data = _.extend(data, SpacedeckAccount.data);
-  data = _.extend(data, SpacedeckWebsockets.data);
-  data = _.extend(data, SpacedeckSpaces.data);
-  data = _.extend(data, SpacedeckTeams.data);
-  data = _.extend(data, SpacedeckSections.data);
-  data = _.extend(data, SpacedeckAvatars.data);
-  data = _.extend(data, SpacedeckModals.data);
+  data = _.extend(data, WhiteSpacesUsers.data);
+  data = _.extend(data, WhiteSpacesAccount.data);
+  data = _.extend(data, WhiteSpacesWebsockets.data);
+  data = _.extend(data, WhiteSpacesSpaces.data);
+  data = _.extend(data, WhiteSpacesTeams.data);
+  data = _.extend(data, WhiteSpacesSections.data);
+  data = _.extend(data, WhiteSpacesAvatars.data);
+  data = _.extend(data, WhiteSpacesModals.data);
 
   Vue.filter('select', function (array, key, operant, value) {
       var res = _.filter(array, function(e){
@@ -112,7 +112,7 @@ function boot_spacedeck() {
     return urls_to_links(text);
   });
 
-  window.spacedeck = new Vue({
+  window.white_spaces = new Vue({
     el: "body",
     data: data,
     methods: methods
@@ -121,8 +121,8 @@ function boot_spacedeck() {
   var lang = "en";
 
   window.refreshLocale = function() {
-    if (spacedeck && spacedeck.user && spacedeck.user.preferences) {
-      lang = spacedeck.user.preferences.language || "en";
+    if (white_spaces && white_spaces.user && white_spaces.user.preferences) {
+      lang = white_spaces.user.preferences.language || "en";
     } else if (window.browser_lang) {
       lang = window.browser_lang;
     }
@@ -141,11 +141,11 @@ function boot_spacedeck() {
     return i18n.t(arguments[0], { postProcess: "sprintf", sprintf: params });
   };
 
-  spacedeck.setup_section_module();
-  spacedeck.load_user(function() {
-    spacedeck.route();
+  white_spaces.setup_section_module();
+  white_spaces.load_user(function() {
+    white_spaces.route();
   },function() {
-    spacedeck.route();
+    white_spaces.route();
   });
 
   window.addEventListener("paste", function(evt) {
@@ -153,8 +153,8 @@ function boot_spacedeck() {
       // cancel
       return;
     }
-    if (spacedeck.active_space) {
-      spacedeck.handle_section_paste(evt);
+    if (white_spaces.active_space) {
+      white_spaces.handle_section_paste(evt);
     }
   });
 }
@@ -164,5 +164,5 @@ document.addEventListener("DOMContentLoaded",function() {
   window.alert = smoke.alert;
   
   FastClick.attach(document.body);
-  boot_spacedeck();
+  boot_white_spaces();
 });

@@ -23,7 +23,7 @@ router.get('/ping', (req, res) => {
 });
 
 router.get('/spaces', (req, res) => {
-  res.render('spacedeck', { title: 'Spaces' });
+  res.render('white_spaces', { title: 'Spaces' });
 });
 
 router.get('/not_found', (req, res) => {
@@ -31,27 +31,27 @@ router.get('/not_found', (req, res) => {
 });
 
 router.get('/confirm/:token', (req, res) => {
-  res.render('spacedeck', { title: 'Space' });
+  res.render('white_spaces', { title: 'Space' });
 });
 
 router.get('/folders/:id', (req, res) => {
-  res.render('spacedeck', {});
+  res.render('white_spaces', {});
 });
 
 router.get('/signup', (req, res) => {
-  res.render('spacedeck', {});
+  res.render('white_spaces', {});
 });
 
 router.get('/accept/:id', (req, res) => {
-  res.render('spacedeck', {});
+  res.render('white_spaces', {});
 });
 
 router.get('/password-reset', (req, res) => {
-  res.render('spacedeck', { title: 'Signup' });
+  res.render('white_spaces', { title: 'Signup' });
 });
 
 router.get('/password-confirm/:token', (req, res) => {
-  res.render('spacedeck', { title: 'Signup' });
+  res.render('white_spaces', { title: 'Signup' });
 });
 
 router.get('/de/*', (req, res) => {
@@ -85,15 +85,15 @@ router.get('/en', (req, res) => {
 });
 
 router.get('/account', (req, res) => {
-  res.render('spacedeck');
+  res.render('white_spaces');
 });
 
 router.get('/login', (req, res) => {
-  res.render('spacedeck');
+  res.render('white_spaces');
 });
 
 router.get('/logout', (req, res) => {
-  res.render('spacedeck');
+  res.render('white_spaces');
 });
 
 router.get('/contact', (req, res) => {
@@ -113,7 +113,7 @@ router.get('/privacy', (req, res) => {
 });
 
 router.get('/t/:id', (req, res) => {
-  res.cookie('spacedeck_locale', req.params.id, { maxAge: 900000, httpOnly: true });
+  res.cookie('white_spaces_locale', req.params.id, { maxAge: 900000, httpOnly: true });
   var path = "/";
   if (req.query.r=="login" || req.query.r=="signup") {
     path = "/"+req.query.r;
@@ -145,7 +145,7 @@ router.get('/s/:hash', (req, res) => {
 });
 
 router.get('/spaces/:id', (req, res) => {
-  res.render('spacedeck', { title: 'Space' });
+  res.render('white_spaces', { title: 'Space' });
 });
 
 module.exports = router;

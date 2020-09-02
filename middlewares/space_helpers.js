@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
     } else {
       req['space'] = space;
       req['spaceRole'] = role;
-      res.header("x-spacedeck-space-role", req['spaceRole']);
+      res.header("x-white_spaces-space-role", req['spaceRole']);
       next();
     }
   };

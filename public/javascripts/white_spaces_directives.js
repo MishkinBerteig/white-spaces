@@ -1,7 +1,7 @@
 
 /*
-  Spacedeck Directives
-  This module registers custom Vue directives for Spacedeck.
+  White-Spaces Directives
+  This module registers custom Vue directives for White-Spaces.
 */
 
 function setup_directives() {
@@ -86,7 +86,7 @@ function setup_directives() {
       play_button.addEventListener(edown, function(evt) {
         try {
           play_func();
-          spacedeck.presenter_send_media_action(a._id,"video","play",video.currentTime);
+          white_spaces.presenter_send_media_action(a._id,"video","play",video.currentTime);
         } catch (e) {
           // catch InvalidStateError
         }
@@ -94,12 +94,12 @@ function setup_directives() {
 
       pause_button.addEventListener(edown, function(evt) {
         pause_func();
-        spacedeck.presenter_send_media_action(a._id,"video","pause",video.currentTime);
+        white_spaces.presenter_send_media_action(a._id,"video","pause",video.currentTime);
       }, false);
 
       stop_button.addEventListener(edown, function(evt) {
         stop_func();
-        spacedeck.presenter_send_media_action(a._id,"video","stop",0);
+        white_spaces.presenter_send_media_action(a._id,"video","stop",0);
       }, false);
     }
   });
@@ -220,7 +220,7 @@ function setup_directives() {
       play_button.addEventListener(edown, function(evt) {
         try {
           play_func();
-          spacedeck.presenter_send_media_action(a._id,"audio","play",audio.currentTime);
+          white_spaces.presenter_send_media_action(a._id,"audio","play",audio.currentTime);
         } catch (e) {
           // catch InvalidStateError
         }
@@ -228,12 +228,12 @@ function setup_directives() {
 
       pause_button.addEventListener(edown, function(evt) {
         pause_func();
-        spacedeck.presenter_send_media_action(a._id,"audio","pause",audio.currentTime);
+        white_spaces.presenter_send_media_action(a._id,"audio","pause",audio.currentTime);
       }, false);
 
       stop_button.addEventListener(edown, function(evt) {
         stop_func();
-        spacedeck.presenter_send_media_action(a._id,"audio","stop",0);
+        white_spaces.presenter_send_media_action(a._id,"audio","stop",0);
       }, false);
 
       timeline.addEventListener(edown, function(evt) {
@@ -300,10 +300,10 @@ function setup_directives() {
       this.medium.value(obj.description);
       this.medium.element.addEventListener('keyup', function() {
         obj.description = this.medium.value();
-        spacedeck.queue_artifact_for_save(obj);
+        white_spaces.queue_artifact_for_save(obj);
       }.bind(this));
 
-      spacedeck.medium_for_object[obj._id] = this.medium;
+      white_spaces.medium_for_object[obj._id] = this.medium;
     }
   });
 

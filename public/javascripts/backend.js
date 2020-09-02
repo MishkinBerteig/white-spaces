@@ -36,12 +36,12 @@ function load_resource(method, path, data, on_success, on_error, on_progress) {
 
   req.onerror = function(err) {
     console.log(err,err.target);
-    // window._spacedeck_location_change is a flag set by redirect / reload functions
-    if (!window._spacedeck_location_change) {
-      if (window.spacedeck && window.spacedeck.active_space) {
-        window.spacedeck.offline = true;
+    // window._white_spaces_location_change is a flag set by redirect / reload functions
+    if (!window._white_spaces_location_change) {
+      if (window.white_spaces && window.white_spaces.active_space) {
+        window.white_spaces.offline = true;
       } else {
-        alert("Could not connect to Spacedeck. Please reconnect and try again.");
+        alert("Could not connect to White-Spaces. Please reconnect and try again.");
       }
     }
     if (on_error) on_error(req);
@@ -51,13 +51,13 @@ function load_resource(method, path, data, on_success, on_error, on_progress) {
   req.open(method, api_endpoint+"/api"+path, true);
 
   if (api_token) {
-    req.setRequestHeader("X-Spacedeck-Auth", api_token);
+    req.setRequestHeader("X-White-Spaces-Auth", api_token);
   }
   if (space_auth) {
-    req.setRequestHeader("X-Spacedeck-Space-Auth", space_auth);
+    req.setRequestHeader("X-White-Spaces-Space-Auth", space_auth);
   }
   if (channel_id) {
-    req.setRequestHeader("X-Spacedeck-Channel", channel_id);
+    req.setRequestHeader("X-White-Spaces-Channel", channel_id);
   }
   if (csrf_token) {
     req.setRequestHeader("X-csrf-token", csrf_token);
@@ -109,7 +109,7 @@ function load_space(id, on_success, on_error) {
   }
   var url = "/spaces/"+id;
   load_resource("get", url, null, function(space, req) {
-    var role = req.getResponseHeader("x-spacedeck-space-role");
+    var role = req.getResponseHeader("x-white_spaces-space-role");
     on_success(space, role);
   }, on_error);
 }

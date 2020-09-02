@@ -29,14 +29,14 @@ const isProduction = app.get('env') === 'production';
 // workaround for libssl_conf.so error triggered by phantomjs
 process.env['OPENSSL_CONF'] = '/dev/null';
 
-console.log("Booting Spacedeck Open… (environment: " + app.get('env') + ")");
+console.log("Booting White-Spaces… (environment: " + app.get('env') + ")");
 
 app.use(logger(isProduction ? 'combined' : 'dev'));
 
 i18n.expressBind(app, {
   locales: ["en", "de", "fr", "oc"],
   defaultLocale: "en",
-  cookieName: "spacedeck_locale",
+  cookieName: "white_spaces_locale",
   devMode: (app.get('env') == 'development')
 });
 
@@ -137,7 +137,7 @@ const server = http.Server(app).listen(port, () => {
   
   const host = server.address().address;
   const port = server.address().port;
-  console.log('Spacedeck Open listening at http://%s:%s', host, port);
+  console.log('White-Spaces listening at http://%s:%s', host, port);
 
 }).on('error', (error) => {
 
@@ -166,7 +166,7 @@ redis.connectRedis();
 /*process.on('message', (message) => {
   console.log("Process message:", message);
   if (message === 'shutdown') {
-    console.log("Exiting Spacedeck.");
+    console.log("Exiting White-Spaces.");
     process.exit(0);
   }
 });*/

@@ -6,7 +6,7 @@ var config = require('config');
 module.exports = (req, res, next) => {
 
   // authentication via API token
-  const api_token = req.headers["x-spacedeck-api-token"];
+  const api_token = req.headers["x-white_spaces-api-token"];
 
   if (api_token && api_token.length>7) {
     db.User.findOne({where: {api_token: api_token}}).then(user => {

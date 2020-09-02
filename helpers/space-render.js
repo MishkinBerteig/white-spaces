@@ -6,7 +6,7 @@ var artifact_vector_render = require("../public/javascripts/vector-render.js");
 global.render_vector_shape = artifact_vector_render.render_vector_shape;
 global.render_vector_drawing = artifact_vector_render.render_vector_drawing;
 
-var artifact_view_model = require("../public/javascripts/spacedeck_board_artifacts.js").SpacedeckBoardArtifacts;
+var artifact_view_model = require("../public/javascripts/white_spaces_board_artifacts.js").WhiteSpacesBoardArtifacts;
 
 var template = fs.readFileSync("views/partials/space-isolated.html");
 

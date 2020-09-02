@@ -1,5 +1,5 @@
 {
-  "team_name": "My Open Spacedeck",
+  "team_name": "White Spaces",
   "contact_email": "support@example.org",
 
   "endpoint": "http://localhost:9666",
@@ -7,7 +7,7 @@
 
   "storage_region": "eu-central-1",
 
-  "storage_bucket": "my_spacedeck_bucket",
+  "storage_bucket": "my_white_spaces_bucket",
   "storage_cdn": "/storage",
   "storage_local_path": "./storage",
   "storage_local_db": "./database.sqlite",

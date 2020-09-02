@@ -1,6 +1,6 @@
 
 /*
-  Spacedeck Whiteboard Directive
+  White-Spaces Whiteboard Directive
   This module registers a custom Vue directive that handles Whiteboard sections.
 */
 
@@ -568,7 +568,7 @@ function setup_whiteboard_directives() {
 
       var a = {
         space_id: $scope.active_space._id,
-        mime: "x-spacedeck/vector",
+        mime: "x-white_spaces/vector",
         description: "",
         control_points: [{dx:0,dy:0}],
         x: point.x,
@@ -605,7 +605,7 @@ function setup_whiteboard_directives() {
 
       var a = {
         space_id: $scope.active_space._id,
-        mime: "x-spacedeck/vector",
+        mime: "x-white_spaces/vector",
         description: "",
         control_points: [{dx:0,dy:0},{dx:0,dy:0},{dx:0,dy:0}],
         x: point.x,
@@ -641,7 +641,7 @@ function setup_whiteboard_directives() {
 
       var a = {
         space_id: $scope.active_space._id,
-        mime: "x-spacedeck/vector",
+        mime: "x-white_spaces/vector",
         description: "",
         control_points: [{dx:0,dy:0},{dx:0,dy:0}],
         x: point.x,

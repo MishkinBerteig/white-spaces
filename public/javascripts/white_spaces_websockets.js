@@ -1,5 +1,5 @@
 
-SpacedeckWebsockets = {
+WhiteSpacesWebsockets = {
   data: {
     users_online: {}
   },
@@ -163,7 +163,7 @@ SpacedeckWebsockets = {
       }.bind(this);
 
       this.websocket.onclose = function(evt) {
-        if (!window._spacedeck_location_change) {
+        if (!window._white_spaces_location_change) {
           this.online = false;
         }
 
@@ -249,7 +249,7 @@ SpacedeckWebsockets = {
 
       this.websocket.onerror = function(evt) {
         console.log("websocket.onerror:", evt);
-        if (!window._spacedeck_location_change) {
+        if (!window._white_spaces_location_change) {
           this.online = false;
           this.was_offline = true;
         }

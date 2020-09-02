@@ -1,5 +1,5 @@
 
-var SpacedeckModals = {
+var WhiteSpacesModals = {
   data: {
     active_modal: null,
     active_account_section: "user",

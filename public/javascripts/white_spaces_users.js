@@ -1,9 +1,9 @@
 /*
-  SpacedeckUsers
+  WhiteSpacesUsers
   This module contains functions dealing with Users and Authentication.
 */
 
-SpacedeckUsers = {
+WhiteSpacesUsers = {
   data: {
     user_forms_email: "",
     user_forms_name: "",

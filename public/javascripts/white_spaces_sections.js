@@ -1,9 +1,9 @@
 /*
-  SpacedeckSections
+  WhiteSpacesSections
   This module contains functions dealing with Space Sections UI.
 */
 
-var SpacedeckSections = {
+var WhiteSpacesSections = {
 
   data: {
     MAX_COLUMNS: 20,
@@ -514,7 +514,7 @@ var SpacedeckSections = {
       this.selection_metrics.contains_shapes = false;
       this.selection_metrics.borders_stylable = false;
 
-      var notes = _.filter(arts, function(a) { return (a.mime=="text/html" || a.mime=="x-spacedeck/shape") });
+      var notes = _.filter(arts, function(a) { return (a.mime=="text/html" || a.mime=="x-white_spaces/shape") });
 
       if (notes.length>=1) {
         this.selection_metrics.contains_text = true;
@@ -555,12 +555,12 @@ var SpacedeckSections = {
         this.selection_metrics.contains_embeds = true;
       }
 
-      var embeds = _.filter(arts, function(a) { return a.mime=="x-spacedeck/vector" });
+      var embeds = _.filter(arts, function(a) { return a.mime=="x-white_spaces/vector" });
       if (embeds.length>=1) {
         this.selection_metrics.contains_vectors = true;
       }
 
-      var embeds = _.filter(arts, function(a) { return a.mime=="x-spacedeck/shape"; });
+      var embeds = _.filter(arts, function(a) { return a.mime=="x-white_spaces/shape"; });
       if (embeds.length>=1) {
         this.selection_metrics.contains_shapes = true;
       }
@@ -699,7 +699,7 @@ var SpacedeckSections = {
         return message;
       }
 
-      window._spacedeck_location_change = true;
+      window._white_spaces_location_change = true;
     },
 
     handle_window_resize: function(evt) {
@@ -925,7 +925,7 @@ var SpacedeckSections = {
     },
 
     discover_zones: function() {
-      this.zones = _.sortBy(_.filter(this.active_space_artifacts, function(a) { return (a.mime=="x-spacedeck/zone") }),
+      this.zones = _.sortBy(_.filter(this.active_space_artifacts, function(a) { return (a.mime=="x-white_spaces/zone") }),
         function(z){return z.order});
     },
 
@@ -1080,7 +1080,7 @@ var SpacedeckSections = {
       this.first_selected_artifact = arts[0];
       this.selection_metrics.count=arts.length;
       this.selection_metrics.scribble_selection = false;
-      if (arts.length == 1 && arts[0].mime == "x-spacedeck/vector") {
+      if (arts.length == 1 && arts[0].mime == "x-white_spaces/vector") {
         if (arts[0].shape == "scribble") {
           this.selection_metrics.scribble_selection = true;
         }
@@ -1695,7 +1695,7 @@ var SpacedeckSections = {
 
       var a = {
         space_id: this.active_space._id,
-        mime: "x-spacedeck/zone",
+        mime: "x-white_spaces/zone",
         description: "Zone "+(this.zones.length+1),
         x: point.x,
         y: point.y,
@@ -1731,7 +1731,7 @@ var SpacedeckSections = {
       
       var a = {
         space_id: this.active_space._id,
-        mime: "x-spacedeck/shape",
+        mime: "x-white_spaces/shape",
         description: "",
         x: point.x,
         y: point.y,
@@ -1965,7 +1965,7 @@ var SpacedeckSections = {
 
       if (a.locked) return;
 
-      if (!_.include(["text/html","x-spacedeck/shape","x-spacedeck/zone"],a.mime)) return;
+      if (!_.include(["text/html","x-white_spaces/shape","x-white_spaces/zone"],a.mime)) return;
 
       if (this.editing_artifact_id == a._id) return;
 
@@ -2538,7 +2538,7 @@ var SpacedeckSections = {
       if (this.selection_metrics.count==0) return;
       arts = this.selected_artifacts();
       for (var i=0;i<arts.length; i++) {
-        if (arts[i].mime=="x-spacedeck/zone") return;
+        if (arts[i].mime=="x-white_spaces/zone") return;
       }
       this.toolbar_props_in = true;
     },

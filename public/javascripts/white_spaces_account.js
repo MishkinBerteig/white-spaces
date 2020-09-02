@@ -1,9 +1,9 @@
 /*
-  SpacedeckAccount
-  This module contains functions dealing with the spacedeck account.
+  White-SpacesAccount
+  This module contains functions dealing with the white_spaces account.
 */
 
-SpacedeckAccount = {
+WhiteSpacesAccount = {
   data: {
     account_confirmed_sent: false,
     account_tab: 'invoices',
@@ -36,7 +36,7 @@ SpacedeckAccount = {
       localStorage.lang = lang;
       this.user.prefs_language = lang;
       this.save_user(function() {
-        window._spacedeck_location_change = true;
+        window._white_spaces_location_change = true;
         location.href="/spaces";
       }.bind(this));
     },
@@ -45,7 +45,7 @@ SpacedeckAccount = {
       if (this.user.email_changed) {
         this.user.confirmed_at = null;
       }
-      window._spacedeck_location_change = true;
+      window._white_spaces_location_change = true;
 
       save_user(this.user, function(user) {
         if (on_success) on_success();

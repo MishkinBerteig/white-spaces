@@ -7,9 +7,9 @@ const redis = require('../helpers/redis');
 module.exports = (req, res, next) => {
   res.header("Cache-Control", "no-cache");
 
-  req['channelId'] = req.headers['x-spacedeck-channel'];
-  req['spacePassword'] = req.headers['x-spacedeck-spacepassword'];
-  req['spaceAuth'] = req.query['spaceAuth'] || req.headers['x-spacedeck-space-auth'];
+  req['channelId'] = req.headers['x-white_spaces-channel'];
+  req['spacePassword'] = req.headers['x-white_spaces-spacepassword'];
+  req['spaceAuth'] = req.query['spaceAuth'] || req.headers['x-white_spaces-space-auth'];
 
   res['distributeCreate'] = function(model, object) {
     if (!object) return;
