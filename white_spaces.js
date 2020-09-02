@@ -34,7 +34,7 @@ console.log("Booting White-Spaces… (environment: " + app.get('env') + ")");
 app.use(logger(isProduction ? 'combined' : 'dev'));
 
 i18n.expressBind(app, {
-  locales: ["en", "de", "fr", "oc"],
+  locales: ["en", "de", "fr", "oc", "es"],
   defaultLocale: "en",
   cookieName: "white_spaces_locale",
   devMode: (app.get('env') == 'development')
