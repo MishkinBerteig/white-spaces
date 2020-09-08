@@ -1309,7 +1309,7 @@ var WhiteSpacesSections = {
           delete old_version._id;
           save_artifact(old_version, function(restored_a) {
             this.update_board_artifact_viewmodel(restored_a);
-            this.active_space_artifacts.push(restored_a);
+            // this.active_space_artifacts.push(restored_a);
             // TODO: rewrite undo history's artifact ids
           }.bind(this));
         }
@@ -1620,7 +1620,7 @@ var WhiteSpacesSections = {
         // console.log("saved artifact", saved_item);
 
         this.update_board_artifact_viewmodel(saved_item);
-        this.active_space_artifacts.push(saved_item);
+        // this.active_space_artifacts.push(saved_item);
 
         if (!url) {
           this.select(null, saved_item);
@@ -1712,7 +1712,7 @@ var WhiteSpacesSections = {
 
       save_artifact(a, function(saved_item) {
         this.update_board_artifact_viewmodel(saved_item);
-        this.active_space_artifacts.push(saved_item);
+        // this.active_space_artifacts.push(saved_item);
 
         this.select(null, saved_item);
       }.bind(this));
@@ -1754,7 +1754,7 @@ var WhiteSpacesSections = {
       save_artifact(a, function(saved_item) {
 
         this.update_board_artifact_viewmodel(saved_item);
-        this.active_space_artifacts.push(saved_item);
+        // this.active_space_artifacts.push(saved_item);
 
         this.select(null, saved_item);
       }.bind(this));
@@ -1840,7 +1840,7 @@ var WhiteSpacesSections = {
       save_artifact(a, function(updated_a) {
         a = updated_a;
         this.update_board_artifact_viewmodel(a);
-        this.active_space_artifacts.push(a);
+        // this.active_space_artifacts.push(a);
         save_artifact_file(a, file, file.name, function(updated_a) {
 
           console.log("file saved. result: ",updated_a);
@@ -2188,7 +2188,7 @@ var WhiteSpacesSections = {
 
       save_artifact(copy, function(saved) {
         this.update_board_artifact_viewmodel(saved);
-        this.active_space_artifacts.push(saved);
+        // this.active_space_artifacts.push(saved);
         if (on_success) {
           on_success(saved);
         } else {
@@ -2386,7 +2386,7 @@ var WhiteSpacesSections = {
         // step 1: create placeholder
         save_artifact(a, function(saved_a) {
           this.update_board_artifact_viewmodel(saved_a);
-          this.active_space_artifacts.push(saved_a);
+          // this.active_space_artifacts.push(saved_a);
 
           var thumb_uri = ENV.apiEndpoint + "/api/webgrabber/"+enc_uri;
 
@@ -2439,7 +2439,7 @@ var WhiteSpacesSections = {
 
       save_artifact(a, function(saved_a) {
         this.update_board_artifact_viewmodel(saved_a);
-        this.active_space_artifacts.push(saved_a);
+        // this.active_space_artifacts.push(saved_a);
       }.bind(this));
     },
 
@@ -2900,7 +2900,7 @@ var WhiteSpacesSections = {
 
           save_artifact(parsed, function(saved_a) {
             this.update_board_artifact_viewmodel(saved_a);
-            this.active_space_artifacts.push(saved_a);
+            // this.active_space_artifacts.push(saved_a);
           }.bind(this));
           return;
         }
