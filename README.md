@@ -2,7 +2,7 @@
 
 ![White-Spaces 6.0 Screenshot](/public/images/sd6-screenshot.png)
 
-This is the free and open source version of White-Spaces, a web based, real time, collaborative whiteboard application with rich media support. White-Spaces is a fork of Spacedeck Open. Spacedeck was developed in 6 major releases during Autumn 2011 until the end of 2016 and was originally a commercial SaaS. The developers were Lukas F. Hartmann (mntmn) and Martin Güther (magegu). 
+This is the free and open source version of White-Spaces, a web based, real time, collaborative whiteboard application with rich media support. White-Spaces is a fork of Spacedeck Open. Spacedeck was developed in 6 major releases during Autumn 2011 until the end of 2016 and was originally a commercial SaaS. The developers were Lukas F. Hartmann (mntmn) and Martin Güther (magegu).
 
 We appreciate filed issues, pull requests and general discussion.
 
