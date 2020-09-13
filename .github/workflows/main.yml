@@ -1,19 +1,53 @@
 name: Node.js CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    paths-ignore:
+      - '*.md'
 
 jobs:
+  skipci:
+    runs-on: self-hosted
+    name: Log skipped CI runs.
+    steps:
+      - run: echo "[skip ci] ${{ contains(github.event.head_commit.message, '[skip ci]') }}"
+
   serve:
     name: Build and serve last-committed white-spaces
     runs-on: self-hosted
-
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 
+
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "${GITHUB_CONTEXT}"
+
+      - name: Read .nvmrc
+        run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
+        id: nvm
+
+      - name: Setup Node
         uses: actions/setup-node@v1
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
       - run: ps2 stop white_spaces.js
       - run: npm install
       - run: ps2 start white_spaces.js
 
-    env:
-      CI: true
+      - name: Dump version
+        run: |
+          node -v
+          npm --version
+          git --version
+
