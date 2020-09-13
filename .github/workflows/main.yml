@@ -41,9 +41,9 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-      - run: ps2 stop white_spaces.js
+      - run: pm2 stop white_spaces.js
       - run: npm install
-      - run: ps2 start white_spaces.js
+      - run: pm2 start white_spaces.js
 
       - name: Dump version
         run: |
