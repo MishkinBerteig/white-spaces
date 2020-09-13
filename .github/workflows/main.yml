@@ -11,9 +11,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.js 
       uses: actions/setup-node@v1
-    - run: kill -9 $(ps aux | grep 'node\sspacedeck.js' | awk '{print $2}' | xargs)
+    - run: ps2 stop white_spaces.js
     - run: npm install
-    - run: npm run start
-    # - run: npm test
+    - run: ps2 start white_spaces.js
+
       env:
         CI: true
