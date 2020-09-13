@@ -4,16 +4,16 @@ on: [push]
 
 jobs:
   serve:
-
+    name: Build and serve last-committed white-spaces
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 
-      uses: actions/setup-node@v1
-    - run: ps2 stop white_spaces.js
-    - run: npm install
-    - run: ps2 start white_spaces.js
+      - uses: actions/checkout@v2
+      - name: Use Node.js 
+        uses: actions/setup-node@v1
+      - run: ps2 stop white_spaces.js
+      - run: npm install
+      - run: ps2 start white_spaces.js
 
-      env:
-        CI: true
+    env:
+      CI: true
