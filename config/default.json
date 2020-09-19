@@ -10,6 +10,7 @@
   "storage_region": "eu-central-1",
 
   "storage_bucket": "my_white_spaces_bucket",
+  "storage_endpoint": "http://localhost:4572",
   "storage_cdn": "/storage",
   "storage_local_path": "./storage",
   "storage_local_db": "./database.sqlite",
