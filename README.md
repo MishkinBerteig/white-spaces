@@ -1,10 +1,12 @@
 # White-Spaces
 
-![White-Spaces 6.0 Screenshot](/public/images/sd6-screenshot.png)
+![White-Spaces 6.0 Screenshot](./public/images/sd6-screenshot.png)
 
 This is the free and open source version of White-Spaces, a web based, real time, collaborative whiteboard application with rich media support. White-Spaces is a fork of Spacedeck Open. Spacedeck was developed in 6 major releases during Autumn 2011 until the end of 2016 and was originally a commercial SaaS. The developers were Lukas F. Hartmann (mntmn) and Martin Güther (magegu).
 
-We appreciate filed issues, pull requests and general discussion.
+# Demo
+
+A public demo of the latest White Spaces version [is available](https://108.node3.net.fosshost.org/). Note that accounts and data on the demo server are deleted periodically (typically every 24 hours).
 
 # Features
 
@@ -70,15 +72,33 @@ The database is stored in ```database.sqlite``` by default.
   - `mkdir storage/` if it not exists
 - start the container with `sudo docker-compose up -f docker-compose.yml -d --build`
 
-# Hacking
+# Hacking & Theming
 
 To rebuild the frontend CSS styles:
 
     gulp styles
 
+All relevant files are located in `./styles`.
+
+To substitute your logo for the default design, edit all relevant image files in `./public/images`.
+
+# Community and Supporters
+
+**White Spaces** is a [Spacedeck](https://github.com/spacedeck/spacedeck-open) fork collaboratively undertaken by [Mishkin Berteig](https://berteig.com/) and [Tekhnee](https://tekhnee.org/).
+
+<p float="left">
+<img src="./public/images/berteig.png" width="40%" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./public/images/tekhnee.png" width="40%" />
+</p>
+
+We are grateful to [fosshost.org](https://fosshost.org) for generously providing the high-quality virtual private server which hosts the White Spaces demo. Fosshost is "a not-for-profit provider of free-to-use and accessible cloud-hosting services to the free and open source software community."
+
+[![fosshost.org logo](./public/images/fosshost.png)](https://fosshost.org/)
+
 # License
 
-White-Spaces logo and brand are trademarks of Mishkin Berteig.  Some rights reserved.
+White-Spaces logo and brand are trademarks of Mishkin Berteig. Some rights reserved.
 
 The Spacedeck logo and brand assets are registered trademarks of Spacedeck GmbH. All rights reserved.
 
@@ -86,7 +106,8 @@ White-Spaces source code is released under the GNU Affero General Public License
 
     White-Spaces (changes to Spacedeck Open)
     Copyright (C) 2020 Mishkin Berteig
-     
+    Copyright (C) 2020 Tekhnee
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
     published by the Free Software Foundation, either version 3 of the
@@ -105,7 +126,7 @@ White-Spaces is based on Spacedeck Open source code which is released under the 
     Spacedeck Open - Web-based Collaborative Whiteboard For Rich Media
     Copyright (C) 2011-2018 Lukas F. Hartmann, Martin Güther
     Icons and original CSS design copyright by Thomas Helbig
-    
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
     published by the Free Software Foundation, either version 3 of the
