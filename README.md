@@ -87,9 +87,9 @@ To substitute your logo for the default design, edit all relevant image files in
 **White Spaces** is a [Spacedeck](https://github.com/spacedeck/spacedeck-open) fork collaboratively undertaken by [Mishkin Berteig](https://berteig.com/) and [Tekhnee](https://tekhnee.org/).
 
 <p float="left">
-<img src="./public/images/berteig.png" width="40%" />
+<a href="https://berteig.com/"><img src="./public/images/berteig.png" width="40%" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="./public/images/tekhnee.png" width="40%" />
+<a href="https://tekhnee.org/"><img src="./public/images/tekhnee.png" width="40%" /></a>
 </p>
 
 We are grateful to [fosshost.org](https://fosshost.org) for generously providing the high-quality virtual private server which hosts the White Spaces demo. Fosshost is "a not-for-profit provider of free-to-use and accessible cloud-hosting services to the free and open source software community."
