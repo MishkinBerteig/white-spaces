@@ -41,9 +41,6 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-      - name: Install PM2
-        run: npm i pm2
-
       - run: pm2 delete white_spaces
       - run: npm install
       - run: pm2 start white_spaces.js
