@@ -33,7 +33,7 @@ White-Spaces requires:
 - Graphicsmagick. On non-Linux, Download: http://www.graphicsmagick.org/ On Linux, install via package manager.
 - Optionally ffmpeg, audiowaveform and ghostscript. See "Optional Dependencies" below.
 
-To run White-Spaces, you only need Node.JS 10.x.
+To run White-Spaces, you only need Node.JS 14.x.
 
 To install all node dependencies, run (do this once):
 
