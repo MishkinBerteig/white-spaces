@@ -41,6 +41,7 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
+      # Update this path whenever node is upgraded.
       - run: /home/rammos/.nvm/versions/node/v14.13.0/bin/pm2 delete white_spaces
       - run: npm install
       - run: /home/rammos/.nvm/versions/node/v14.13.0/bin/pm2 start white_spaces.js
