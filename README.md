@@ -29,7 +29,7 @@ A public demo of the latest White Spaces version [is available](https://108.node
 
 White-Spaces requires:
 
-- Node.js 10.x: Web Server / API. Download: https://nodejs.org
+- Node.js v14: Web Server / API. Download: https://nodejs.org
 - Graphicsmagick. On non-Linux, Download: http://www.graphicsmagick.org/ On Linux, install via package manager.
 - Optionally ffmpeg, audiowaveform and ghostscript. See "Optional Dependencies" below.
 
