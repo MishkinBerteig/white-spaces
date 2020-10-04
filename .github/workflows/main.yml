@@ -41,9 +41,9 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-      - run: pm2 delete white_spaces
+      - run: /home/rammos/.nvm/versions/node/v14.13.0/bin/pm2 delete white_spaces
       - run: npm install
-      - run: pm2 start white_spaces.js
+      - run: /home/rammos/.nvm/versions/node/v14.13.0/bin/pm2 start white_spaces.js
 
       - name: Dump version
         run: |
