@@ -15,7 +15,7 @@ const Op = Sequelize.Op;
 const uuidv4 = require('uuid/v4');
 
 router.get('/', (req, res) => {
-  res.render('index', { title: 'Spaces' });
+  res.render('./views/index', { title: 'Spaces' });
 });
 
 router.get('/ping', (req, res) => {
@@ -23,35 +23,35 @@ router.get('/ping', (req, res) => {
 });
 
 router.get('/spaces', (req, res) => {
-  res.render('white_spaces', { title: 'Spaces' });
+  res.render('./views/white_spaces', { title: 'Spaces' });
 });
 
 router.get('/not_found', (req, res) => {
-  res.render('not_found', { title: 'Spaces' });
+  res.render('./views/not_found', { title: 'Spaces' });
 });
 
 router.get('/confirm/:token', (req, res) => {
-  res.render('white_spaces', { title: 'Space' });
+  res.render('./views/white_spaces', { title: 'Space' });
 });
 
 router.get('/folders/:id', (req, res) => {
-  res.render('white_spaces', {});
+  res.render('./views/white_spaces', {});
 });
 
 router.get('/signup', (req, res) => {
-  res.render('white_spaces', {});
+  res.render('./views/white_spaces', {});
 });
 
 router.get('/accept/:id', (req, res) => {
-  res.render('white_spaces', {});
+  res.render('./views/white_spaces', {});
 });
 
 router.get('/password-reset', (req, res) => {
-  res.render('white_spaces', { title: 'Signup' });
+  res.render('./views/white_spaces', { title: 'Signup' });
 });
 
 router.get('/password-confirm/:token', (req, res) => {
-  res.render('white_spaces', { title: 'Signup' });
+  res.render('./views/white_spaces', { title: 'Signup' });
 });
 
 router.get('/de/*', (req, res) => {
@@ -85,23 +85,23 @@ router.get('/en', (req, res) => {
 });
 
 router.get('/account', (req, res) => {
-  res.render('white_spaces');
+  res.render('./views/white_spaces');
 });
 
 router.get('/login', (req, res) => {
-  res.render('white_spaces');
+  res.render('./views/white_spaces');
 });
 
 router.get('/logout', (req, res) => {
-  res.render('white_spaces');
+  res.render('./views/white_spaces');
 });
 
 router.get('/contact', (req, res) => {
-  res.render('public/contact');
+  res.render('./views/public/contact');
 });
 
 router.get('/about', (req, res) => {
-  res.render('public/about');
+  res.render('./views/public/about');
 });
 
 router.get('/terms', (req, res) => {
@@ -109,7 +109,7 @@ router.get('/terms', (req, res) => {
 });
 
 router.get('/privacy', (req, res) => {
-  res.render('public/privacy');
+  res.render('./views/public/privacy');
 });
 
 router.get('/t/:id', (req, res) => {
@@ -145,7 +145,7 @@ router.get('/s/:hash', (req, res) => {
 });
 
 router.get('/spaces/:id', (req, res) => {
-  res.render('white_spaces', { title: 'Space' });
+  res.render('./views/white_spaces', { title: 'Space' });
 });
 
 module.exports = router;
