@@ -2,7 +2,7 @@
 
 const config = require('config');
 const nodemailer = require('nodemailer');
-const swig = require('swig');
+const nunjucks = require('nunjucks');
 //var AWS = require('aws-sdk');
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
       plaintext+="\n"+options.action.link+"\n\n";
     }
 
-    const htmlText = swig.renderFile('./views/emails/action.html', {
+    const htmlText = nunjucks.render('./views/emails/action.html', {
       text: body.replace(/(?:\n)/g, '<br />'),
       options: options
     });

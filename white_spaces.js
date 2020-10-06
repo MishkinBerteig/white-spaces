@@ -16,7 +16,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-const swig = require('swig');
+const nunjucks = require('nunjucks');
 const i18n = require('i18n-2');
 const helmet = require('helmet');
 
@@ -40,16 +40,28 @@ i18n.expressBind(app, {
   devMode: (app.get('env') == 'development')
 });
 
-swig.setDefaults({
-  varControls: ["[[", "]]"] // otherwise it's not compatible with vue.js
+var env = new nunjucks.Environment();
+
+env = nunjucks.configure({
+  tags: { // otherwise it's not compatible with vue.js
+    variableStart: "[[",
+    variableEnd: "]]"
+  },
+  express: app
 });
 
-swig.setFilter('cdn', function(input, idx) {
+env.addFilter('cdn', function(input, idx) {
   return input;
 });
 
-app.engine('html', swig.renderFile);
+app.engine('html', env.render);
 app.set('view engine', 'html');
+app.get('/', function(req, res) {
+    res.render('./views/index.html');
+});
+app.get('/login', function(req, res) {
+    res.render('./views/white_spaces.html');
+});
 
 if (isProduction) {
   app.set('views', path.join(__dirname, 'build', 'views'));
@@ -114,7 +126,7 @@ if (config.get('storage_local_path')) {
 //app.use(require('./middlewares/404'));
 if (app.get('env') == 'development') {
   app.set('view cache', false);
-  swig.setDefaults({cache: false});
+  nunjucks.configure({noCache: true});
 } else {
   app.use(require('./middlewares/500'));
 }
