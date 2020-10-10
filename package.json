@@ -29,7 +29,7 @@
     "i18n-2": "0.7.3",
     "log-timestamp": "latest",
     "mock-aws-s3": "4.0.1",
-    "moment": "^2.19.3",
+    "moment": "^2.29.1",
     "morgan": "^1.9.1",
     "node-phantom-simple": "2.2.4",
     "node-server-screenshot": "^0.2.1",
