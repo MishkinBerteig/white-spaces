@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
     db.User.findOne({where: {api_token: api_token}}).then(user => {
       req.user = user;
       next();
-    }).error(err => {
+    }).catch(err => {
       res.status(403).json({
         "error": "invalid_api-token"
       });
@@ -55,7 +55,7 @@ module.exports = (req, res, next) => {
             }
           });
       })
-      .error(err => {
+      .catch(err => {
         console.error("Session resolve error",err);
         next();
       });

@@ -76,7 +76,7 @@ module.exports = {
           }
 
           db.Space.create(space)
-            .error((err) => {
+            .catch((err) => {
               console.error("[import] space upsert err:",err)
             })
           
@@ -117,7 +117,7 @@ module.exports = {
 
             db.packArtifact(a)
 
-            db.Artifact.create(a).error(function(err) {
+            db.Artifact.create(a).catch(function(err) {
               console.error("[import] artifact upsert err:",err)
             })
           }

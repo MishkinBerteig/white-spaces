@@ -84,7 +84,7 @@ router.post('/', function(req, res) {
           };
 
           db.User.create(u)
-            .error(err => {
+            .catch(err => {
               res.sendStatus(400);
             })
             .then(u => {
@@ -95,7 +95,7 @@ router.post('/', function(req, res) {
                 creator_id: u._id
               };
               db.Space.create(homeFolder)
-                .error(err => {
+                .catch(err => {
                   res.sendStatus(400);
                 })
                 .then(homeFolder => {
@@ -114,7 +114,7 @@ router.post('/', function(req, res) {
                       });
                       res.status(201).json({});          
                     })
-                    .error(err => {
+                    .catch(err => {
                       res.status(400).json(err);
                     });
                 })
