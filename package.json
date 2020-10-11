@@ -42,7 +42,7 @@
     "sequelize": "4.44.4",
     "serve-favicon": "2.5.0",
     "serve-static": "^1.13.1",
-    "slug": "3.3.5",
+    "slug": "3.4.0",
     "sqlite3": "5.0.0",
     "umzug": "^2.1.0",
     "underscore": "1.11.0",
