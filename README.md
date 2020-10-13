@@ -39,6 +39,8 @@ To install all node dependencies, run (do this once):
 
     npm install
 
+**N.B.:** You need to run `npm install` (without parameters) or `npm ci` after each update of Vue. Otherwise the update will not be copied from `node_modules` into `public/javascripts`, and White Spaces will continue to load the outdated version of the library.
+
 # Configuration
 
 See [config/default.json](config/default.json). Set `storage_local_path` for a local sqlite database or `storage_region`, `storage_bucket`, `storage_cdn` and `storage_endpoint` for AWS S3. `mail_provider` may be one of `console` or `smtp`. Also, omit a trailing `/` for the `endpoint`.
