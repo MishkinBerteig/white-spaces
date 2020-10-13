@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node white_spaces.js"
+    "start": "node white_spaces.js",
+    "postinstall": "cp node_modules/vue/dist/vue.js public/javascripts/ && cp node_modules/vue/dist/vue.min.js public/javascripts/"
   },
   "engines": {
     "node": ">=14.0.0"
