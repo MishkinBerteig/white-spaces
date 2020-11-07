@@ -797,7 +797,7 @@
 .icon-folder-flagged:before {
   content: "\E0EA"; }
 
-.icon-folder-leave:before {
+.icon-folder-leave-active:before {
   content: "\E0EB"; }
 
 .icon-folder-locked:before {
@@ -906,7 +906,7 @@
 .icon-input-radio-checked:before, .radio.checked:before, .radio:hover:before, .radio:active:before {
   content: "\E10E"; }
 
-.icon-leave:before {
+.icon-leave-active:before {
   content: "\E10F"; }
 
 .icon-lightbulb:before {
@@ -4149,7 +4149,7 @@ form .alert {
 .icon-folder-flagged:before {
   content: "\E0EA"; }
 
-.icon-folder-leave:before {
+.icon-folder-leave-active:before {
   content: "\E0EB"; }
 
 .icon-folder-locked:before {
@@ -4258,7 +4258,7 @@ form .alert {
 .icon-input-radio-checked:before, .radio.checked:before, .radio:hover:before, .radio:active:before {
   content: "\E10E"; }
 
-.icon-leave:before {
+.icon-leave-active:before {
   content: "\E10F"; }
 
 .icon-lightbulb:before {
@@ -6698,7 +6698,7 @@ select {
 .icon-folder-flagged:before {
   content: "\E0EA"; }
 
-.icon-folder-leave:before {
+.icon-folder-leave-active:before {
   content: "\E0EB"; }
 
 .icon-folder-locked:before {
@@ -6807,7 +6807,7 @@ select {
 .icon-input-radio-checked:before, .radio.checked:before, .radio:hover:before, .radio:active:before {
   content: "\E10E"; }
 
-.icon-leave:before {
+.icon-leave-active:before {
   content: "\E10F"; }
 
 .icon-lightbulb:before {
@@ -11086,7 +11086,7 @@ button.close {
 .icon-folder-flagged:before {
   content: "\E0EA"; }
 
-.icon-folder-leave:before {
+.icon-folder-leave-active:before {
   content: "\E0EB"; }
 
 .icon-folder-locked:before {
@@ -11195,7 +11195,7 @@ button.close {
 .icon-input-radio-checked:before, .radio.checked:before, .radio:hover:before, .radio:active:before {
   content: "\E10E"; }
 
-.icon-leave:before {
+.icon-leave-active:before {
   content: "\E10F"; }
 
 .icon-lightbulb:before {

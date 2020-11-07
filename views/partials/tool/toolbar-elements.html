@@ -10,7 +10,7 @@
       
     <a class="btn btn-icon btn-dark"
        title="Parent Folder"
-       href="/folders/{{active_space.parent_space_id}}"
+       v-bind:href="'/folders/' + active_space.parent_space_id"
        v-if="(active_space.parent_space_id && !guest_nickname && !embedded)">
       
       <span class="icon icon-sd6 icon-svg"></span>

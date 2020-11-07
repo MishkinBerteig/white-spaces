@@ -284,7 +284,7 @@ function setup_directives() {
   });
 
   Vue.directive('sd-richtext', {
-    twoWay: true,
+    // twoWay: true,  <== This needs to be upgraded to Vue 2.
     update: function(obj) {
       this.mode = 'rich';
 
@@ -476,14 +476,14 @@ function setup_directives() {
         discover_minmax();
         if (xfader) {
           nx = clamp(dx, minx, maxx);
-          scope.$set(fader_var_x, nx);
+          Vue.set(scope, fader_var_x, nx);
         }
 
         if (yfader) {
           ny = clamp(dy, miny, maxy);
           if (step<1) ny = ny.toFixed(1); // float precision hack
 
-          scope.$set(fader_var_y, ny);
+          Vue.set(scope, fader_var_y, ny);
         }
       }.bind(this);
 

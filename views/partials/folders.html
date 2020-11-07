@@ -92,7 +92,7 @@
     <div id="folder-breadcrumb">
 
       <span v-if="logged_in" v-for="item in active_space_path" class="btn btn-sm btn-transparent" v-sd-droppable="handle_folder_drop;item">
-        <a href="/{{item.space_type}}s/{{item._id}}">{{item.name}}</a>&nbsp; ▶</span>
+        <a use v-bind with a computed property>{{item.name}}</a>&nbsp; ▶</span>
 
       <a v-if="(active_space_role != 'admin')" type="button" class="btn btn-sm btn-transparent">
         <span>{{active_folder.name}}</span>
@@ -123,27 +123,27 @@
     </div>
 
     <div id="folder-empty" v-if="folder_spaces_filter">
-      <div v-if="active_profile_spaces | empty?">
+      <div v-if="(active_profile_spaces.length == 0)">
         <p><b>"{{folder_spaces_filter}}"</b>  <br/>[[  __('search_no_results') ]]</p>
         <button type="button" class="btn btn-md btn-round btn-stroke-darken events" v-on:click=" folder_spaces_filter = ''">[[  __('search_clear') ]]</button>
       </div>
     </div>
     <div id="folder-grid">
       <div
-         v-for="item in active_profile_spaces | orderBy folder_sorting folder_reverse"
+         v-for="(item, index) in active_profile_spaces_ordered"
          v-sd-draggable="item"
          v-sd-droppable="handle_folder_drop;item"
          draggable="true"
          class="item" v-bind:class="item.space_type"
-        v-bind:style="{'z-index': (active_profile_spaces.length - $index)}">
+         v-bind:style="{'z-index': (active_profile_spaces.length - index)}">
 
         <!-- anonymous editors can go edit spaces in a folder -->
-        <a href="/s/{{item.edit_hash}}-{{item.edit_slug}}" v-if="active_space_role=='editor' && !logged_in">
+        <a use v-bind with a computed property v-if="active_space_role=='editor' && !logged_in">
           <span class="item-thumbnail thumbnail-loading" v-if="item.space_type=='space'"></span>
           <span class="item-thumbnail" v-bind:style="space_thumbnail_style(item)"></span>
         </a>
         
-        <a v-if="active_space_role=='viewer' || logged_in" href="/{{item.space_type}}s/{{item._id}}">
+        <a v-if="active_space_role=='viewer' || logged_in" use v-bind with a computed property>
           <span class="item-thumbnail thumbnail-loading" v-if="item.space_type=='space'"></span>
           <span class="item-thumbnail" v-bind:style="space_thumbnail_style(item)"></span>
         </a>
@@ -163,7 +163,7 @@
           </div>
         </div>
         <span class="item-appendix">
-          <span class="pull-right item-date">{{item.updated_at | date 'YYYY-MM-DD'}}</span>
+          <span class="pull-right item-date">{{item.updated_at | date('YYYY-MM-DD')}}</span>
 
           <span class="item-author">
             <span class="profile-avatar btn btn-xs btn-icon btn-white btn-round m-r-10"

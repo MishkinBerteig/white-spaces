@@ -2,7 +2,7 @@
   <div class="form-group">
     <div class="input-group">
       <input class="input no-b w-3 b-r m-r-60" type="url" placeholder="Url" 
-        v-on="keydown:create_link_on_selected_artifacts | key enter"
+        v-on:keydown.enter="create_link_on_selected_artifacts"
         v-model="insert_link_url">
     </div>
     

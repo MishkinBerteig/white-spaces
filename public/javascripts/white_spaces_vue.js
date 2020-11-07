@@ -104,10 +104,6 @@ function boot_white_spaces() {
     return array.length;
   });
 
-  Vue.filter('empty?', function (array) {
-    return array.length==0;
-  });
-
   Vue.filter('urls_to_links', function (text) {
     return urls_to_links(text);
   });

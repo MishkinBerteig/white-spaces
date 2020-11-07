@@ -58,7 +58,7 @@
 
 <div id="space" v-cloak
      v-if="active_view == 'space' && active_space_loaded"
-     class="section board active mouse-{{mouse_state}} tool-{{active_tool}}"
+     use v-bind with a computed property
      v-bind:style="{'background-color': active_space.background_color}"
      v-sd-droppable="handle_data_drop;active_space"
      v-sd-whiteboard
@@ -83,7 +83,7 @@
     <div v-for="a in active_space_artifacts"
          v-bind:style="a.view.style" v-bind:class="a.view.classes"
          v-bind:class="{text-editing:(editing_artifact_id==a._id && (a.view.major_type=='text' || a.view.major_type=='shape'))}"
-         id="artifact-{{a._id}}">
+         v-bind:id="'artifact-' + a._id">
 
 
       <div v-if="a.view && a.view.major_type" style="height:100%; width:100%" v-bind:title="(a.editor_name || (a.user && a.user.nickname) || '')">
@@ -96,8 +96,8 @@
         <div v-if="a.view.major_type == 'text'" class="text" v-bind:style="a.view.inner_style">
           <div class="text-table">
             <div class="text-cell" v-bind:style="a.view.text_cell_style">
-              <div class="text-column" class="text-editing" v-sd-richtext:obj="a" v-show="editing_artifact_id==a._id">{{{a.description}}}</div>
-              <div class="text-column" v-show="editing_artifact_id!=a._id">{{{a.description|urls_to_links}}}</div>
+              <div v-html="a.description" class="text-column" class="text-editing" v-sd-richtext:obj="a" v-show="editing_artifact_id==a._id"></div>
+              <div v-html="a.description|urls_to_links" class="text-column" v-show="editing_artifact_id!=a._id"></div>
             </div>
           </div>
 
@@ -105,28 +105,28 @@
             <a class="link btn btn-round btn-primary btn-sm" v-if="a.view.link" v-bind:href="a.view.link" target="_blank">{{a.view.link_caption}}</a>
           </span>
 
-          <input v-show="is_selected(a)" type="text" id="ios-focuser-{{a._id}}" class="ios-focuser">
+          <input v-show="is_selected(a)" type="text" v-bind:id="'ios-focuser-' + a._id" class="ios-focuser">
         </div>
 
         <!-- drawing (annotation) -->
         <div v-if="a.view.major_type == 'vector'" class="clip" v-bind:style="a.view.inner_style">
-          <div>{{{a.view.vector_svg}}}</div>
+          <div v-html="a.view.vector_svg"></div>
         </div>
 
         <!-- svg shape -->
         <div v-if="a.view.major_type == 'shape'" class="clip" v-bind:style="a.view.inner_style">
-          <div class="shape">{{{a.view.vector_svg}}}</div>
+          <div v-html="a.view.vector_svg" class="shape"></div>
           <div class="text-table">
             <div class="text-cell" v-bind:style="a.view.text_cell_style">
               <div class="text-column" class="text-editing" v-sd-richtext:obj="a" v-show="editing_artifact_id==a._id"></div>
-              <div class="text-column" v-show="editing_artifact_id!=a._id">{{{a.description|urls_to_links}}}</div>
+              <div v-html="a.description|urls_to_links" class="text-column" v-show="editing_artifact_id!=a._id"></div>
             </div>
           </div>
           <span v-if="a.view.link.length>0" class="link-wrapper">
             <a class="link btn btn-round btn-primary btn-sm" v-if="a.view.link" v-bind:href="a.view.link" target="_blank">{{a.view.link_caption}}</a>
           </span>
 
-          <input v-show="is_selected(a)" type="text" id="ios-focuser-{{a._id}}" class="ios-focuser">
+          <input v-show="is_selected(a)" type="text" v-bind:id="'ios-focuser-' + a._id" class="ios-focuser">
         </div>
 
         <!-- svg image -->
@@ -181,7 +181,7 @@
         <div v-if="a.view.major_type == 'audio'" v-audioplayer="a" class="audio" v-bind:style="a.view.inner_style">
 
           <audio>
-            <source v-for="alt in a.payload_alternatives | orderBy 'mime' -1" v-bind:src="alt.payload_uri" v-bind:type="alt.mime"/>
+            <source v-for="alt in _.orderBy(a.payload_alternatives, 'mime', ['desc'])" v-bind:src="alt.payload_uri" v-bind:type="alt.mime"/>
             <source v-bind:src="a.payload_uri" v-bind:type="a.mime" v-if="a.payload_uri"/>
           </audio>
 
@@ -233,15 +233,14 @@
         <div v-if="a.view.major_type == 'zone'" class="zone" v-bind:style="a.view.inner_style">
           <div class="text-cell">
             <div class="text-column" class="text-editing" v-sd-richtext:obj="a" v-show="editing_artifact_id==a._id"></div>
-            <div class="text-column" v-show="editing_artifact_id!=a._id">{{{a.description|urls_to_links}}}</div>
+            <div v-html="a.description|urls_to_links" class="text-column" v-show="editing_artifact_id!=a._id"></div>
           </div>
         </div>
 
         <!-- embed -->
-        <div v-if="a.view.major_type == 'oembed'" class="oembed" 
+        <div v-html="a.view.oembed_html" v-if="a.view.major_type == 'oembed'" class="oembed" 
           v-bind:style="{'background-image': 'url('+a.view.thumbnail_uri+')'}" 
           v-bind:class="{interactive:(a.view.interactive || present_mode)}">
-          {{{a.view.oembed_html}}}
           <button class="btn btn-icon btn-primary btn-round interact" v-on:click="a.view.interactive=1" v-if="!a.view.interactive && !present_mode"><span class="icon icon-tool-pointer"></span></button>
         </div>
 
@@ -304,7 +303,7 @@
 
       <div
         v-bind:style="selection_metrics.vector_style" v-show="selection_metrics.vector_points">
-        <span v-for="p in selection_metrics.vector_points" v-bind:style="{left: p.dx+'px', top: p.dy+'px'}" class="vector-handle" data-idx="{{$index}}"></span>
+        <span v-for="(p, index) in selection_metrics.vector_points" v-bind:style="{left: p.dx+'px', top: p.dy+'px'}" class="vector-handle" v-bind:data-idx="index"></span>
       </div>
     </div>
     <!-- handles end -->

@@ -10,7 +10,7 @@
     <div style="margin-bottom: 15px; margin-top: 8px" >
       <small>
         [[__("created_by")]] <b>{{active_folder.creator.nickname||active_folder.creator.slug}}.</b>
-        <br/>[[__("last_updated")]] <b>{{active_folder.updated_at | date 'MMMM Do YYYY, HH:mm'}}.</b>
+        <br/>[[__("last_updated")]] <b>{{active_folder.updated_at | date('MMMM, Do, YYYY,, HH:mm')}}.</b>
       </small>
     </div>
 
@@ -34,7 +34,7 @@
 
         <small>
         [[__("by")]]
-          <span v-for="u in item.users">{{u}}<span v-if="$index < (item.users.length-1)">, </span></span>
+          <span v-for="(u, index) in item.users">{{u}}<span v-if="index < (item.users.length-1)">, </span></span>
         </small>
       </li>
     </ul>

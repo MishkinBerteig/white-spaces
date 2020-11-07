@@ -16,7 +16,7 @@
             <input type="text" class="input" v-model="active_folder.name">
           </div>
 
-          <div style="margin:auto;background-size:cover;background-position:50% 50%;border-radius:10px;margin-bottom:10px;width:200px;height:100px;background-image:url({{active_folder.avatar_thumb_uri}})" v-if="active_folder.avatar_thumb_uri">
+          <div v-bind:style="'margin:auto;background-size:cover;background-position:50% 50%;border-radius:10px;margin-bottom:10px;width:200px;height:100px;background-image:url(' + active_folder.avatar_thumb_uri + ')'" v-if="active_folder.avatar_thumb_uri">
           </div>
 
           <div class="progress state-processing" v-if="uploading_folder_avatar">

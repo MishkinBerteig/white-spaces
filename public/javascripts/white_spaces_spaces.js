@@ -66,6 +66,18 @@ var WhiteSpacesSpaces = {
     medium_for_object: {},
   },
 
+  computed: {
+    active_profile_spaces_ordered: function() {
+      return _.orderBy(active_profile_spaces, 'folder_sorting folder_reverse');
+    },
+    active_space_messages_massaged: function() {
+      var filtered = _.filter(active_space_messages, function(i) {
+        return i[artifact_id]==undefined;
+      });
+      return _.orderBy(filtered, 'created_at', ['desc']);
+    }
+  },
+
   methods: {
     search_spaces: function() {
       var query = this.folder_spaces_search;

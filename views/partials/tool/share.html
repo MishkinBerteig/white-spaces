@@ -1,15 +1,15 @@
 <!-- <h4 class="dialog-title">Share</h4> -->
 
 <div class="dialog-section no-p">
-    <a class="btn btn-transparent btn-icon-labeled hover" href="http://www.facebook.com/sharer.php?u={{share_base_url_enc}}{{active_space._id}}">
+    <a class="btn btn-transparent btn-icon-labeled hover" href="http://www.facebook.com/sharer.php?v-bind:u="share_base_url_enc"{{active_space._id}}">
       <span class="icon icon-social-square-facebook"> </span>
       <span class="icon-label"> facebook </span>
     </a>
-    <a class="btn btn-transparent btn-icon-labeled hover" target="_blank" href="https://twitter.com/intent/tweet?url={{share_base_url_enc}}{{active_space._id}}">
+    <a class="btn btn-transparent btn-icon-labeled hover" target="_blank" href="https://twitter.com/intent/tweet?v-bind:url="share_base_url_enc"{{active_space._id}}">
       <span class="icon icon-social-twitter"> </span>
       <span class="icon-label"> twitter </span>
     </a>
-    <a class="btn btn-transparent btn-icon-labeled hover email" target="_blank" href="mailto:?subject=Check out my new Space&amp;body={{share_base_url_enc}}{{active_space._id}}">
+    <a class="btn btn-transparent btn-icon-labeled hover email" target="_blank" href="mailto:?subject=Check out my new Space&amp;v-bind:body="share_base_url_enc"{{active_space._id}}">
       <span class="icon icon-mail"> </span>
       <span class="icon-label"> email </span>
     </a>

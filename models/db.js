@@ -210,7 +210,7 @@ module.exports = {
     updated_at: {type: Sequelize.DATE, defaultValue: Sequelize.NOW}
   }),
 
-  init: async function() {
+  beforeCreate: async function() {
     User = this.User;
     Session = this.Session;
     Space = this.Space;

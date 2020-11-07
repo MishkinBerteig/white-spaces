@@ -10,7 +10,7 @@
     <div style="margin-bottom: 15px; margin-top: 8px" >
       <small>
         [[__("created_by")]] <b>{{active_space.creator.nickname}}.</b><br/>
-        [[__("last_updated")]] <b>{{active_space.updated_at | date 'MMMM Do YYYY, HH:mm'}}.</b>
+        [[__("last_updated")]] <b>{{active_space.updated_at | date('MMMM, Do, YYYY,, HH:mm')}}.</b>
       </small>
     </div-->
 
@@ -36,7 +36,7 @@
     </div>
 
     <ul class="comments">
-      <li class="comment" v-for="item in active_space_messages | exceptFilter artifact_id | orderBy 'created_at' -1">
+      <li class="comment" v-for="item in active_space_messages_massaged">
         <ul class="comment-meta">
           <li>
             <a title="{{item.created_at | date 'MMMM Do YYYY, HH:mm'}}">
@@ -55,7 +55,7 @@
         </ul>
 
         <span class="comment-author">
-          <a class="url" rel="contact" title="{{item.user.nickname}}">
+          <a class="url" rel="contact" v-bind:title="item.user.nickname">
             <img class="btn btn-round btn-dark btn-sm btn-icon" v-bind:src="user_avatar_image(item.user)" v-if="has_avatar_image(item.user)">
 
             <span class="btn btn-round btn-dark btn-sm btn-icon" v-if="!has_avatar_image(item.user)">

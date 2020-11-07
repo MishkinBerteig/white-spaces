@@ -56,6 +56,7 @@ var WhiteSpacesSections = {
     },
     selected_artifacts_json: "",
     zones: [],
+    zones_ordered: [],
     user_cursors: [],
 
     default_style: {}, // will be copied from active_style on startup
@@ -373,7 +374,7 @@ var WhiteSpacesSections = {
       this.$watch('active_style.background_color', function (value, mutation) {
 
         if (this.active_style.background_color != this.active_space.background_color) {
-          this.$set("active_space.background_color",this.active_style.background_color);
+          this.$set(this.active_space, 'background_color', this.active_style.background_color);
           this.throttled_save_active_space();
         }
 
@@ -918,7 +919,8 @@ var WhiteSpacesSections = {
     },
 
     discover_zones: function() {
-      this.zones = _.sortBy(_.filter(this.active_space_artifacts, function(a) { return (a.mime=="x-white_spaces/zone") }),
+      this.zones = _.sortBy(_.filter(this.active_space_artifacts, function(a) { return (a.mime=="x-white_spaces/zone");
+      this.zones_ordered = _.sortBy(this.zones, 'order'); }),
         function(z){return z.order});
     },
 

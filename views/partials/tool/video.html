@@ -9,7 +9,7 @@
     <p>Click to Upload<br/> or drag file(s) anywhere.</p>
   </div>
   <div class="dialog-section no-p-b">
-    <input type="text" v-model="video_search_query" class="input input-md input-white input-round text-center no-p no-b no-r input-block" placeholder="Search / Paste URL" v-on="keyup:search_videos(video_search_query) | key enter">
+    <input type="text" v-model="video_search_query" class="input input-md input-white input-round text-center no-p no-b no-r input-block" placeholder="Search / Paste URL" v-on:keyup.enter="search_videos(video_search_query)">
   </div>
   <button class="btn btn-transparent btn-block text-center" v-on="click:handle_insert_video_url(video_search_query)">Insert Video</button>
 </div>

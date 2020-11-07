@@ -1,0 +1,59 @@
+17. Delete twoWay: true, then $emit an event from the child component to trigger an update to the prop in the parent
+  Line 287: public/javascripts/white_spaces_directives.js
+  Reason: Two-way prop binding has been removed in favor of more explicit event-driven communication between parent and child
+  More info: http://vuejs.org/guide/migration.html#twoWay-Prop-Option
+
+
+
+
+
+12. Check Vue.directive('clipboard') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 8: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+13. Check Vue.directive('t') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 19: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+14. Check Vue.directive('videoplayer') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 35: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+15. Check Vue.directive('audioplayer') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 107: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+16. Check Vue.directive('sd-richtext') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 286: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+18. Check Vue.directive('focus') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 310: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+19. Check Vue.directive('sd-draggable') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 325: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+20. Check Vue.directive('sd-droppable') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 347: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+21. Check Vue.directive('sd-fader') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 412: public/javascripts/white_spaces_directives.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
+25. Check Vue.directive('sd-whiteboard') to make sure its syntax has been updated and for anything beyond simple DOM manipulations, refactor to a component
+  Line 27: public/javascripts/white_spaces_whiteboard.js
+  Reason: Directives have been vastly reduced in scope and components are preferred in most use cases
+  More info: http://vuejs.org/guide/migration.html#Custom-Directives-simplified
+
